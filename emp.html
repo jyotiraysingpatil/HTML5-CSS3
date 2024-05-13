@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse:collapse;
+            align:center;
+            width:50%;
+        }
+
+        td,th{
+            border:1px black;   
+        }
+        tr{
+            background:palevioletred;
+        }
+        table,th,td{
+           border:1px solid black;
+       }
+    </style>
+</head>
+<body>  
+<table>
+    <tr>
+        <td>Name </td>
+    <td><input type="text" name="uname" id="Name"></td>
+</tr>
+    <tr>
+        <td>Employee code</td>
+    <td>
+<input type="radio" name="ADMIN" ID="ADMIN" VALUE="ADMIN" >ADMIN</input><BR>
+<input type="radio" name="HR" id="HR" VALUE="HR">HR<BR>
+<input type="radio" name="TECHNICAL" ID="TECHNICAL" VALUE="TECHNICAL">TECHNICAL <BR>
+<input type="radio" name="ACCOUNTS" id="ACCOUNTS" value="ACCOUNTS">ACCOUNTS<BR>
+</TD>
+<tr><td>Date of Joining</td>
+<td><input type="date" name="DOJ" ID="DOJ"></td></tr>
+
+<tr><td>Address</td>
+<td><textarea name="addr" id="addr" cols="20" rows="5"></textarea></td>
+
+<tr><td>Training Program attended</td>
+    <td><input type="checkbox" id="checked" checked="checked" name="checked">HTML/DHTML <BR>
+    <input type="checkbox" id="JAVA" CHECKED="JAVA" NAME="JAVA"> JAVA <BR>
+    <input type="checkbox" id="checked" checked="checked" name="checked">CLIENT/SERVER <BR>
+    <input type="checkbox" id="checked" checked="checked" name="checked">.NET <BR>
+</TD>
+
+<TR><TD>Training Programme need to attend</TD>
+    <div class="scrollable -checkboxes">
+    <td><input type=" checkbox" name="option1" >JAVASCRIPT<br>
+    <input type=" checkbox" name="option1" >JSTRUTSBR
+</td>
+    <TR><TD>Send the Information at</TD>
+        <td><input type="email" value="empinfo@gmail.com"></td>
+
+       
+
+    </table>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validatetextbox(id, errid, minLength, maxLength) {
+            var data = document.getElementById(id).value;
+            if (data.trim().length >= minLength && data.trim().length <= maxLength) {
+                document.getElementById(errid).innerHTML = ""
+                return true;
+            }
+            document.getElementById(errid).innerHTML = "Cust name must contain minimum " + minLength + " character and maximum " + maxLength + " character";
+            return false;
+        }
+
+        function validateDates() {
+            var billingDate = new Date(document.getElementById("bdate").value);
+            var shippingDate = new Date(document.getElementById("sdate").value);
+
+            if (billingDate > shippingDate) {
+                document.getElementById("errdate").innerHTML = "Billing date cannot be greater than shipping date";
+                return false;
+            }
+            document.getElementById("errdate").innerHTML = "";
+            return true;
+        }
+
+        function validatedata(event) {
+            var flag1 = validatetextbox("cname", "erruname", 4, 7);
+            var flag2 = validateDates();
+            return flag1 && flag2;
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        Order Id: <input type="text" id="oid" name="oid" placeholder="Order Id" required><br>
+        Cust Id: <input type="text" id="cname" name="cname" placeholder="Cust Name" required minlength="4" maxlength="7"><span id="erruname" style="color:red"></span><br>
+        Enter Billing Date: <input type="date" id="bdate" name="bdate" placeholder="Billing Date" required><span id="errdate" style="color:red"></span><br>
+        Enter Shipping Date: <input type="date" id="sdate" name="sdate" placeholder="Shipping date" required><br>
+        Oder Total: <input type="text" id="total" name="total" placeholder="Order Total" required><br>
+        <input type="submit" id="btn" name="btn" onclick="return validatedata(event)">
+    </form>
+</body>
+</html>
